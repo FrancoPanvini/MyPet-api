@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mascotas",
+  "info": {
+    "name": "Mascota"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "sexo": {
+      "type": "string",
+      "regex": "[MH]",
+      "required": true,
+      "maxLength": 1
+    },
+    "fecha_nacimiento": {
+      "type": "date",
+      "required": true
+    },
+    "fecha_exacta": {
+      "type": "boolean",
+      "required": true
+    },
+    "raza": {
+      "via": "mascotas",
+      "model": "raza"
+    }
+  }
+}
